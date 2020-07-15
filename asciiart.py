@@ -60,8 +60,9 @@ class Canvas():
 
 c = Canvas()
 r = Rectangle(0, 5, 7, 8, '+')
-r2 = Rectangle(4, 2, 6, 4, '*')
 c.add_shape(r)
+c.render()
+r2 = Rectangle(4, 2, 6, 4, '*')
 c.add_shape(r2)
 c.render()
 r.change_fill('c')
