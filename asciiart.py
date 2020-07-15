@@ -21,8 +21,8 @@ class Rectangle():
 
 class Canvas():
 
-    def __init__(self):
-        self.shapes = []
+    def __init__(self, shapes=[]):
+        self.shapes = shapes
         self.canvas = [[' ',' ',' ',' ',' ',' ',' ',' ',' ',' '],
                        [' ',' ',' ',' ',' ',' ',' ',' ',' ',' '],
                        [' ',' ',' ',' ',' ',' ',' ',' ',' ',' '],
@@ -46,6 +46,8 @@ class Canvas():
                     continue
 
     def render(self):
+        self.__init__(self.shapes)
+
         for shape in self.shapes:
             self.render_helper(shape)
 
@@ -55,11 +57,14 @@ class Canvas():
     def clear(self):
         self.__init__()       
 
+
 c = Canvas()
-r = Rectangle(25, 3, 45, 8, '+')
+r = Rectangle(0, 5, 7, 8, '+')
 r2 = Rectangle(4, 2, 6, 4, '*')
 c.add_shape(r)
 c.add_shape(r2)
+c.render()
 r.change_fill('c')
-r.translate('x', 3)
+r2.translate('x', -2)
+r2.translate('y', 1)
 c.render()
