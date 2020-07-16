@@ -8,8 +8,10 @@ class Rectangle():
         self.end_y = end_y
         self.fill_char = fill_char
 
+
     def __repr__(self):
         return f"<Rectangle '{self.fill_char}' at ({self.start_x}, {self.start_y})>"
+
 
     def change_fill(self, fill_char):
         """
@@ -25,6 +27,7 @@ class Rectangle():
         """
 
         self.fill_char = fill_char
+
 
     def translate(self, axis, num):
         """
@@ -70,8 +73,10 @@ class Canvas():
                        [' ',' ',' ',' ',' ',' ',' ',' ',' ',' '],
                        [' ',' ',' ',' ',' ',' ',' ',' ',' ',' ']]
 
+
     def __repr__(self):
         return f'<Canvas {len(self.canvas[0])} by {len(self.canvas)} chars>'                       
+
 
     def add_shape(self, shape):
         """
@@ -93,6 +98,7 @@ class Canvas():
         """
 
         self.shapes.append(shape)
+
 
     def render_helper(self, shape):
         """ 
@@ -118,6 +124,7 @@ class Canvas():
                     self.canvas[row][col] = shape.fill_char
                 except IndexError:
                     continue
+
 
     def render(self):
         """
@@ -145,6 +152,7 @@ class Canvas():
 
         for row in self.canvas:
             print(''.join(row))
+
 
     def clear(self):
         """
